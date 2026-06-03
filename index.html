@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu Mẹo vặt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tra cứu Mẹo vặt</h1>
+        <button id="theme-toggle">🌓 Theme</button>
+    </header>
+
+    <main id="main-view">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Tìm kiếm mẹo vặt (VD: chụp đêm, lau kính...)">
+        </div>
+        <div id="tips-list" class="grid"></div>
+    </main>
+
+    <article id="reader-view" class="hidden">
+        <button id="back-btn">← Quay lại</button>
+        <div id="markdown-content"></div>
+    </article>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cach_chup_dem",
+    "title": "Cài đặt để chụp đêm nét căng",
+    "tags": ["ban đêm", "phơi sáng", "nhiếp ảnh"],
+    "category": "Quay Chụp",
+    "subCategory": "Photo",
+    "path": "data/quay_chup/photo/cach_chup_dem.md"
+  },
+  {
+    "id": "tay_vet_ban",
+    "title": "Tẩy vết bẩn trên áo trắng",
+    "tags": ["quần áo", "vệ sinh", "giặt giũ"],
+    "category": "Nhà Cửa",
+    "subCategory": "Vệ Sinh",
+    "path": "data/nha_cua/ve_sinh/tay_vet_ban.md"
+  }
+]
