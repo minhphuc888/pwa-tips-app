@@ -14,5 +14,61 @@
     "category": "Nhà Cửa",
     "subCategory": "Vệ Sinh",
     "path": "data/nha_cua/ve_sinh/tay_vet_ban.md"
+  },
+  {
+    "id": "loc_nuoc_tu_nhien",
+    "title": "Cách lọc nước sạch trong tự nhiên",
+    "tags": ["sinh tồn", "nước", "lọc nước", "dã ngoại"],
+    "category": "Sinh Tồn",
+    "subCategory": "Nguồn Nước & Lửa",
+    "path": "data/sinh_ton/nguon_nuoc_lua/loc_nuoc_tu_nhien.md"
+  },
+  {
+    "id": "tao_lua_sinh_ton",
+    "title": "Cách tạo lửa không cần bật lửa",
+    "tags": ["sinh tồn", "lửa", "đánh lửa", "kỹ năng"],
+    "category": "Sinh Tồn",
+    "subCategory": "Nguồn Nước & Lửa",
+    "path": "data/sinh_ton/nguon_nuoc_lua/tao_lua_sinh_ton.md"
+  },
+  {
+    "id": "xac_dinh_phuong_huong",
+    "title": "Xác định phương hướng không có la bàn",
+    "tags": ["sinh tồn", "phương hướng", "bản đồ", "định hướng"],
+    "category": "Sinh Tồn",
+    "subCategory": "Trú Ẩn & Định Hướng",
+    "path": "data/sinh_ton/tru_an_dinh_huong/xac_dinh_phuong_huong.md"
+  },
+  {
+    "id": "so_cuu_ran_can",
+    "title": "Sơ cứu khẩn cấp khi bị rắn độc cắn",
+    "tags": ["sinh tồn", "sơ cứu", "y tế", "rắn độc"],
+    "category": "Sinh Tồn",
+    "subCategory": "Sơ Cứu Khẩn Cấp",
+    "path": "data/sinh_ton/so_cuu_khan_cap/so_cuu_ran_can.md"
+  },
+  {
+    "id": "dung_leu_tru_an",
+    "title": "Cách dựng lều trú ẩn khẩn cấp trong rừng",
+    "tags": ["sinh tồn", "trú ẩn", "lều dã ngoại", "kỹ năng"],
+    "category": "Sinh Tồn",
+    "subCategory": "Trú Ẩn & Định Hướng",
+    "path": "data/sinh_ton/tru_an_dinh_huong/dung_leu_tru_an.md"
+  },
+  {
+    "id": "thuc_vat_an_duoc",
+    "title": "Cách nhận biết thực vật ăn được trong tự nhiên",
+    "tags": ["sinh tồn", "thực vật", "ăn được", "nhiễm độc"],
+    "category": "Sinh Tồn",
+    "subCategory": "Thực Phẩm & Săn Bắt",
+    "path": "data/sinh_ton/thuc_pham_san_bat/thuc_vat_an_duoc.md"
+  },
+  {
+    "id": "quy_tac_stop_khi_lac",
+    "title": "Xử lý khi bị lạc trong rừng (Quy tắc STOP)",
+    "tags": ["sinh tồn", "bị lạc", "kỹ năng", "tâm lý"],
+    "category": "Sinh Tồn",
+    "subCategory": "Trú Ẩn & Định Hướng",
+    "path": "data/sinh_ton/tru_an_dinh_huong/quy_tac_stop_khi_lac.md"
   }
 ]

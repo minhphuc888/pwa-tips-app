@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-tips-v3';
+const CACHE_NAME = 'pwa-tips-v5';
 const CORE_FILES = [
     '/',
     '/index.html',
