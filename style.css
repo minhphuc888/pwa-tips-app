@@ -2,18 +2,26 @@
     --bg-color: #f4f4f9;
     --text-color: #333;
     --card-bg: #fff;
+    --sidebar-bg: #f8f9fa;
     --primary: #007bff;
-    --border: #ddd;
+    --border: #e9ecef;
     --tag-bg: #e9ecef;
+    --hover-bg: #e9ecef;
+    --active-bg: rgba(0, 123, 255, 0.1);
+    --header-bg: #fff;
 }
 
 body.dark-mode {
     --bg-color: #121212;
-    --text-color: #f4f4f9;
+    --text-color: #e0e0e0;
     --card-bg: #1e1e1e;
+    --sidebar-bg: #181818;
     --primary: #4da3ff;
-    --border: #333;
+    --border: #2d2d2d;
     --tag-bg: #2d2d2d;
+    --hover-bg: #2a2a2a;
+    --active-bg: rgba(77, 163, 255, 0.15);
+    --header-bg: #1e1e1e;
 }
 
 body {
@@ -23,40 +31,99 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--card-bg);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.8rem 1.5rem;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    background: linear-gradient(135deg, var(--primary), #ab47bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu-toggle-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.35rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.menu-toggle-btn:hover {
+    background-color: var(--hover-bg);
+}
+
+.menu-toggle-btn svg {
+    display: block;
 }
 
 #theme-toggle, #back-btn {
     background: none;
     border: 1px solid var(--border);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     cursor: pointer;
     border-radius: 6px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #theme-toggle:hover, #back-btn:hover {
-    background-color: var(--tag-bg);
+    background-color: var(--hover-bg);
+    border-color: var(--primary);
 }
 
-main, article {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+.app-layout {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    padding: 2rem 1.5rem;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+#main-view, #reader-view {
+    max-width: 850px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .search-container input {
@@ -162,4 +229,233 @@ main, article {
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: monospace;
+}
+
+/* ==========================================
+   Sidebar & Folder Tree Styling
+   ========================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 290px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+    z-index: 20;
+    transform: translateX(-100%);
+    visibility: hidden;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.sidebar-header {
+    padding: 1.2rem 1.2rem 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-color);
+    opacity: 0.75;
+}
+
+.sidebar-actions {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.action-btn-sm {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.action-btn-sm:hover {
+    background-color: var(--hover-bg);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Cấu trúc cây (Tree) */
+.tips-tree {
+    padding: 0.8rem 0.5rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.tree-folder {
+    margin-bottom: 0.2rem;
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+    border-radius: 6px;
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 550;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.folder-header:hover {
+    background-color: var(--hover-bg);
+}
+
+.folder-header svg.chevron {
+    transition: transform 0.2s ease;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.tree-folder.expanded > .folder-header > svg.chevron {
+    transform: rotate(90deg);
+}
+
+.folder-icon {
+    margin-right: 0.4rem;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.folder-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-children {
+    display: none;
+    padding-left: 1rem;
+    margin-left: 0.4rem;
+    border-left: 1px dashed var(--border);
+    animation: treeSlideDown 0.2s ease-out;
+}
+
+@keyframes treeSlideDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tree-folder.expanded > .folder-children {
+    display: block;
+}
+
+/* Bài viết (Tree Item) */
+.tree-tip {
+    display: flex;
+    align-items: center;
+    padding: 0.45rem 0.6rem;
+    margin: 0.15rem 0;
+    cursor: pointer;
+    border-radius: 6px;
+    user-select: none;
+    font-size: 0.86rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.tree-tip:hover {
+    background-color: var(--hover-bg);
+    opacity: 1;
+}
+
+.tree-tip.active {
+    background-color: var(--active-bg);
+    color: var(--primary);
+    font-weight: 600;
+    opacity: 1;
+    border-left-color: var(--primary);
+}
+
+.tree-tip svg.item-icon {
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+    opacity: 0.6;
+    color: var(--text-color);
+}
+
+.tree-tip.active svg.item-icon {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Ẩn kết quả không trùng khớp khi tìm kiếm */
+.tree-tip.search-hidden,
+.tree-folder.search-hidden {
+    display: none !important;
+}
+
+/* Lớp phủ màn hình (Backdrop) hoạt động trên mọi kích cỡ */
+.sidebar-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 15;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Khu vực hành động của Reader View */
+.reader-actions {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ==========================================
+   Responsive & Mobile Styles
+   ========================================== */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1.25rem 1rem;
+    }
+
+    #markdown-content {
+        padding: 1.5rem 1rem;
+    }
 }

@@ -10,21 +10,65 @@
 </head>
 <body>
     <header>
-        <h1>Tra cứu Mẹo vặt</h1>
-        <button id="theme-toggle">🌓 Theme</button>
+        <div class="header-left">
+            <button id="menu-toggle" class="menu-toggle-btn" aria-label="Mở menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <h1 id="brand-title">Tra cứu Mẹo vặt</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle">🌓 Theme</button>
+        </div>
     </header>
 
-    <main id="main-view">
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Tìm kiếm mẹo vặt (VD: chụp đêm, lau kính...)">
-        </div>
-        <div id="tips-list" class="grid"></div>
-    </main>
+    <div class="app-layout">
+        <!-- Sidebar bên trái -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Danh mục mẹo vặt</h3>
+                <div class="sidebar-actions">
+                    <button id="expand-all-btn" class="action-btn-sm" title="Mở rộng tất cả">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="7 13 12 18 17 13"></polyline>
+                            <polyline points="7 6 12 11 17 6"></polyline>
+                        </svg>
+                    </button>
+                    <button id="collapse-all-btn" class="action-btn-sm" title="Thu gọn tất cả">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="17 11 12 6 7 11"></polyline>
+                            <polyline points="17 18 12 13 7 18"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Cây thư mục sẽ được render động ở đây -->
+            <nav id="tips-tree" class="tips-tree"></nav>
+        </aside>
 
-    <article id="reader-view" class="hidden">
-        <button id="back-btn">← Quay lại</button>
-        <div id="markdown-content"></div>
-    </article>
+        <!-- Lớp phủ cho mobile -->
+        <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+        <!-- Nội dung chính bên phải -->
+        <main class="main-content">
+            <div id="main-view">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm mẹo vặt (VD: chụp đêm, lau kính...)">
+                </div>
+                <div id="tips-list" class="grid"></div>
+            </div>
+
+            <article id="reader-view" class="hidden">
+                <div class="reader-actions">
+                    <button id="back-btn">← Quay lại danh mục</button>
+                </div>
+                <div id="markdown-content"></div>
+            </article>
+        </main>
+    </div>
 
     <script src="app.js"></script>
 </body>
