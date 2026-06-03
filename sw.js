@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-tips-v5';
+const CACHE_NAME = 'pwa-tips-v9';
 const CORE_FILES = [
     '/',
     '/index.html',
@@ -45,8 +45,9 @@ self.addEventListener('fetch', event => {
             
             // Nếu không có, fetch qua mạng
             return fetch(event.request).then(networkResponse => {
-                // Nếu là file markdown (.md), tự động lưu vào cache để lần sau có thể đọc offline
-                if (event.request.url.endsWith('.md')) {
+                // Tự động lưu vào cache các file markdown (.md) và hình ảnh để đọc offline
+                const url = event.request.url;
+                if (url.endsWith('.md') || /\.(png|jpg|jpeg|svg|gif|webp)$/i.test(url)) {
                     const responseClone = networkResponse.clone();
                     caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, responseClone);

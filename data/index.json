@@ -2,10 +2,10 @@
   {
     "id": "cach_chup_dem",
     "title": "Cài đặt để chụp đêm nét căng",
-    "tags": ["ban đêm", "phơi sáng", "nhiếp ảnh"],
+    "tags": ["ban đêm", "phơi sáng", "nhiếp ảnh", "chụp đêm"],
     "category": "Quay Chụp",
-    "subCategory": "Photo",
-    "path": "data/quay_chup/photo/cach_chup_dem.md"
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/cach_chup_dem.md"
   },
   {
     "id": "tay_vet_ban",
@@ -70,5 +70,101 @@
     "category": "Sinh Tồn",
     "subCategory": "Trú Ẩn & Định Hướng",
     "path": "data/sinh_ton/tru_an_dinh_huong/quy_tac_stop_khi_lac.md"
+  },
+  {
+    "id": "chup_bau_troi_sao",
+    "title": "Kỹ thuật chụp bầu trời sao và dải Ngân Hà (Milky Way)",
+    "tags": ["bầu trời sao", "ngân hà", "milky way", "phơi sáng", "chụp đêm"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_bau_troi_sao.md"
+  },
+  {
+    "id": "chup_chan_dung",
+    "title": "Mẹo chụp chân dung thần thái (Portrait)",
+    "tags": ["chân dung", "portrait", "xóa phông", "chụp người"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_chan_dung.md"
+  },
+  {
+    "id": "chup_phong_canh",
+    "title": "Kỹ thuật chụp ảnh phong cảnh sắc nét (Landscape)",
+    "tags": ["phong cảnh", "landscape", "thiên nhiên", "độ nét"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_phong_canh.md"
+  },
+  {
+    "id": "chup_goc_rong",
+    "title": "Mẹo chụp ảnh góc siêu rộng (Ultrawide)",
+    "tags": ["góc siêu rộng", "ultrawide", "góc rộng", "bố cục"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_goc_rong.md"
+  },
+  {
+    "id": "chup_kien_truc_toa_nha",
+    "title": "Chụp kiến trúc và tòa nhà đồ sộ (Architecture)",
+    "tags": ["kiến trúc", "tòa nhà", "architecture", "đối xứng"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_kien_truc_toa_nha.md"
+  },
+  {
+    "id": "chup_duong_pho",
+    "title": "Nghệ thuật chụp ảnh đường phố (Street Life)",
+    "tags": ["đường phố", "street life", "khoảnh khắc", "lia máy"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_duong_pho.md"
+  },
+  {
+    "id": "chup_bien_ca",
+    "title": "Cách chụp biển cả thơ mộng và hùng vĩ (Seascape)",
+    "tags": ["biển", "seascape", "sóng biển", "phơi sáng"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_bien_ca.md"
+  },
+  {
+    "id": "chup_do_an",
+    "title": "Mẹo chụp ảnh đồ ăn hấp dẫn (Food Photography)",
+    "tags": ["đồ ăn", "food", "ẩm thực", "flatlay"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_do_an.md"
+  },
+  {
+    "id": "chup_vet_sang_xe",
+    "title": "Cách chụp phơi sáng vệt sáng xe ban đêm (Light Trails)",
+    "tags": ["vệt sáng xe", "light trails", "phơi sáng", "chụp đêm"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_vet_sang_xe.md"
+  },
+  {
+    "id": "chup_nguoc_sang",
+    "title": "Cách chụp ảnh ngược sáng nghệ thuật (Silhouette)",
+    "tags": ["ngược sáng", "silhouette", "bóng đen", "hoàng hôn"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_nguoc_sang.md"
+  },
+  {
+    "id": "chup_chuyen_dong_nhanh",
+    "title": "Chụp chuyển động nhanh và thể thao sắc nét (Action)",
+    "tags": ["chuyển động nhanh", "thể thao", "action", "burst mode"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_chuyen_dong_nhanh.md"
+  },
+  {
+    "id": "chup_can_canh_macro",
+    "title": "Mẹo chụp ảnh cận cảnh & Macro bằng điện thoại",
+    "tags": ["macro", "cận cảnh", "chi tiết", "lấy nét"],
+    "category": "Quay Chụp",
+    "subCategory": "Mẹo Chụp Ảnh",
+    "path": "data/quay_chup/chup_can_canh_macro.md"
   }
 ]
