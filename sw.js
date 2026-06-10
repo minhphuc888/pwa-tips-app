@@ -45,9 +45,9 @@ self.addEventListener('fetch', event => {
             
             // Nếu không có, fetch qua mạng
             return fetch(event.request).then(networkResponse => {
-                // Tự động lưu vào cache các file markdown (.md) và hình ảnh để đọc offline
+                // Tự động lưu vào cache hình ảnh để đọc offline (các file .md quan trọng đã được xử lý ở app.js)
                 const url = event.request.url;
-                if (url.endsWith('.md') || /\.(png|jpg|jpeg|svg|gif|webp)$/i.test(url)) {
+                if (/\.(png|jpg|jpeg|svg|gif|webp)$/i.test(url)) {
                     const responseClone = networkResponse.clone();
                     caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, responseClone);

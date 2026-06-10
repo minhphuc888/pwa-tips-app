@@ -5,7 +5,8 @@
     "tags": ["ban đêm", "phơi sáng", "nhiếp ảnh", "chụp đêm"],
     "category": "Quay Chụp",
     "subCategory": "Mẹo Chụp Ảnh",
-    "path": "data/quay_chup/cach_chup_dem.md"
+    "path": "data/quay_chup/cach_chup_dem.md",
+    "important": false
   },
   {
     "id": "tay_vet_ban",
@@ -13,7 +14,8 @@
     "tags": ["quần áo", "vệ sinh", "giặt giũ"],
     "category": "Nhà Cửa",
     "subCategory": "Vệ Sinh",
-    "path": "data/nha_cua/ve_sinh/tay_vet_ban.md"
+    "path": "data/nha_cua/ve_sinh/tay_vet_ban.md",
+    "important": false
   },
   {
     "id": "loc_nuoc_tu_nhien",
@@ -21,7 +23,8 @@
     "tags": ["sinh tồn", "nước", "lọc nước", "dã ngoại"],
     "category": "Sinh Tồn",
     "subCategory": "Nguồn Nước & Lửa",
-    "path": "data/sinh_ton/nguon_nuoc_lua/loc_nuoc_tu_nhien.md"
+    "path": "data/sinh_ton/nguon_nuoc_lua/loc_nuoc_tu_nhien.md",
+    "important": true
   },
   {
     "id": "tao_lua_sinh_ton",
@@ -29,7 +32,8 @@
     "tags": ["sinh tồn", "lửa", "đánh lửa", "kỹ năng"],
     "category": "Sinh Tồn",
     "subCategory": "Nguồn Nước & Lửa",
-    "path": "data/sinh_ton/nguon_nuoc_lua/tao_lua_sinh_ton.md"
+    "path": "data/sinh_ton/nguon_nuoc_lua/tao_lua_sinh_ton.md",
+    "important": true
   },
   {
     "id": "xac_dinh_phuong_huong",
@@ -37,7 +41,8 @@
     "tags": ["sinh tồn", "phương hướng", "bản đồ", "định hướng"],
     "category": "Sinh Tồn",
     "subCategory": "Trú Ẩn & Định Hướng",
-    "path": "data/sinh_ton/tru_an_dinh_huong/xac_dinh_phuong_huong.md"
+    "path": "data/sinh_ton/tru_an_dinh_huong/xac_dinh_phuong_huong.md",
+    "important": true
   },
   {
     "id": "so_cuu_ran_can",
@@ -45,7 +50,8 @@
     "tags": ["sinh tồn", "sơ cứu", "y tế", "rắn độc"],
     "category": "Sinh Tồn",
     "subCategory": "Sơ Cứu Khẩn Cấp",
-    "path": "data/sinh_ton/so_cuu_khan_cap/so_cuu_ran_can.md"
+    "path": "data/sinh_ton/so_cuu_khan_cap/so_cuu_ran_can.md",
+    "important": true
   },
   {
     "id": "dung_leu_tru_an",
@@ -53,7 +59,8 @@
     "tags": ["sinh tồn", "trú ẩn", "lều dã ngoại", "kỹ năng"],
     "category": "Sinh Tồn",
     "subCategory": "Trú Ẩn & Định Hướng",
-    "path": "data/sinh_ton/tru_an_dinh_huong/dung_leu_tru_an.md"
+    "path": "data/sinh_ton/tru_an_dinh_huong/dung_leu_tru_an.md",
+    "important": true
   },
   {
     "id": "thuc_vat_an_duoc",
@@ -61,7 +68,8 @@
     "tags": ["sinh tồn", "thực vật", "ăn được", "nhiễm độc"],
     "category": "Sinh Tồn",
     "subCategory": "Thực Phẩm & Săn Bắt",
-    "path": "data/sinh_ton/thuc_pham_san_bat/thuc_vat_an_duoc.md"
+    "path": "data/sinh_ton/thuc_pham_san_bat/thuc_vat_an_duoc.md",
+    "important": true
   },
   {
     "id": "quy_tac_stop_khi_lac",
@@ -69,7 +77,8 @@
     "tags": ["sinh tồn", "bị lạc", "kỹ năng", "tâm lý"],
     "category": "Sinh Tồn",
     "subCategory": "Trú Ẩn & Định Hướng",
-    "path": "data/sinh_ton/tru_an_dinh_huong/quy_tac_stop_khi_lac.md"
+    "path": "data/sinh_ton/tru_an_dinh_huong/quy_tac_stop_khi_lac.md",
+    "important": true
   },
   {
     "id": "chup_bau_troi_sao",
@@ -77,7 +86,8 @@
     "tags": ["bầu trời sao", "ngân hà", "milky way", "phơi sáng", "chụp đêm"],
     "category": "Quay Chụp",
     "subCategory": "Mẹo Chụp Ảnh",
-    "path": "data/quay_chup/chup_bau_troi_sao.md"
+    "path": "data/quay_chup/chup_bau_troi_sao.md",
+    "important": false
   },
   {
     "id": "chup_chan_dung",
@@ -173,6 +183,7 @@
     "tags": ["wifi", "mật khẩu", "tiện ích", "mật khẩu wifi", "sinh viên", "cafe"],
     "category": "Tiện Ích",
     "subCategory": "Mẹo Vặt",
-    "path": "data/tien_ich/mat_khau_wifi.md"
+    "path": "data/tien_ich/mat_khau_wifi.md",
+    "important": true
   }
 ]

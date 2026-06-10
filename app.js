@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
-    // Nút tải offline tất cả bài viết
+    // Nút tải offline các bài viết quan trọng
     const cacheAllBtn = document.getElementById('cache-all-btn');
     if (cacheAllBtn) {
         cacheAllBtn.addEventListener('click', async () => {
-            if (!confirm('Bạn có muốn tải tất cả bài viết về máy để xem ngoại tuyến không?')) return;
+            if (!confirm('Bạn có muốn tải các bài viết quan trọng về máy để xem ngoại tuyến không?')) return;
             
             const originalText = cacheAllBtn.innerText;
             cacheAllBtn.innerText = '⏳ Đang tải...';
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                     const cacheNames = await caches.keys();
                     const currentCacheName = cacheNames.length > 0 ? cacheNames[0] : 'pwa-tips-v9';
                     const cache = await caches.open(currentCacheName);
-                    const paths = allTips.map(tip => tip.path);
+                    const importantTips = allTips.filter(tip => tip.important);
+                    const paths = importantTips.map(tip => tip.path);
                     const timestamp = new Date().getTime();
                     
                     const promises = paths.map(async (path) => {
@@ -42,11 +43,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                     });
                     
                     await Promise.all(promises);
-                    alert('Đã tải và cập nhật tất cả bài viết thành công!');
+                    alert('Đã tải và cập nhật các bài viết quan trọng thành công!');
                 } else {
-                    const promises = allTips.map(tip => fetch(tip.path));
+                    const importantTips = allTips.filter(tip => tip.important);
+                    const promises = importantTips.map(tip => fetch(tip.path));
                     await Promise.all(promises);
-                    alert('Đã tải tất cả bài viết thành công!');
+                    alert('Đã tải các bài viết quan trọng thành công!');
                 }
             } catch (err) {
                 console.error('Lỗi khi tải offline:', err);
@@ -295,7 +297,7 @@ function selectTip(tip) {
     }
     
     // 2. Mở nội dung bài viết
-    openArticle(tip.path);
+    openArticle(tip);
     
     // 3. Trên mobile, tự động đóng sidebar sau khi chọn
     const sidebar = document.getElementById('sidebar');
@@ -380,11 +382,18 @@ function renderList(tips) {
     });
 }
 
-async function openArticle(path) {
+async function openArticle(tip) {
     try {
-        const res = await fetch(path);
+        const res = await fetch(tip.path);
         if (!res.ok) throw new Error('Network response was not ok');
         const mdText = await res.text();
+        
+        // Lưu vào cache nếu là bài viết quan trọng
+        if (tip.important && 'caches' in window) {
+            caches.open('pwa-tips-v9').then(cache => {
+                cache.put(tip.path, res.clone());
+            });
+        }
         
         // Parse Markdown sang HTML bằng marked.js
         document.getElementById('markdown-content').innerHTML = marked.parse(mdText);
