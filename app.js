@@ -12,6 +12,52 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
+    // Nút tải offline tất cả bài viết
+    const cacheAllBtn = document.getElementById('cache-all-btn');
+    if (cacheAllBtn) {
+        cacheAllBtn.addEventListener('click', async () => {
+            if (!confirm('Bạn có muốn tải tất cả bài viết về máy để xem ngoại tuyến không?')) return;
+            
+            const originalText = cacheAllBtn.innerText;
+            cacheAllBtn.innerText = '⏳ Đang tải...';
+            cacheAllBtn.disabled = true;
+            
+            try {
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    const currentCacheName = cacheNames.length > 0 ? cacheNames[0] : 'pwa-tips-v9';
+                    const cache = await caches.open(currentCacheName);
+                    const paths = allTips.map(tip => tip.path);
+                    const timestamp = new Date().getTime();
+                    
+                    const promises = paths.map(async (path) => {
+                        try {
+                            const response = await fetch(`${path}?t=${timestamp}`);
+                            if (response.ok) {
+                                await cache.put(path, response.clone());
+                            }
+                        } catch (e) {
+                            console.error('Không thể tải:', path, e);
+                        }
+                    });
+                    
+                    await Promise.all(promises);
+                    alert('Đã tải và cập nhật tất cả bài viết thành công!');
+                } else {
+                    const promises = allTips.map(tip => fetch(tip.path));
+                    await Promise.all(promises);
+                    alert('Đã tải tất cả bài viết thành công!');
+                }
+            } catch (err) {
+                console.error('Lỗi khi tải offline:', err);
+                alert('Có lỗi xảy ra khi tải bài viết!');
+            } finally {
+                cacheAllBtn.innerText = originalText;
+                cacheAllBtn.disabled = false;
+            }
+        });
+    }
+
     // Các thành phần UI của Sidebar
     const tipsTree = document.getElementById('tips-tree');
     const expandAllBtn = document.getElementById('expand-all-btn');

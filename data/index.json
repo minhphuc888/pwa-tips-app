@@ -166,5 +166,13 @@
     "category": "Quay Chụp",
     "subCategory": "Mẹo Chụp Ảnh",
     "path": "data/quay_chup/chup_can_canh_macro.md"
+  },
+  {
+    "id": "mat_khau_wifi",
+    "title": "Tổng hợp mật khẩu Wifi sinh viên và cửa hàng",
+    "tags": ["wifi", "mật khẩu", "tiện ích", "mật khẩu wifi", "sinh viên", "cafe"],
+    "category": "Tiện Ích",
+    "subCategory": "Mẹo Vặt",
+    "path": "data/tien_ich/mat_khau_wifi.md"
   }
 ]
